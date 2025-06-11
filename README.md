@@ -1,12 +1,62 @@
-# React + Vite
+🔐 Password Manager Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React-based password manager that allows users to securely store and manage their site credentials using MongoDB for persistent storage.
 
-Currently, two official plugins are available:
+🚀 Features
+* Add, edit, and delete passwords
+* Toggle password visibility
+* Copy username or password with one click
+* Open saved websites in a new tab
+* Toast notifications for user feedback
+* Responsive design using CSS
+* MongoDB-backed storage with Node.js + Express API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⚙️ Setup Instructions: 
 
-## Expanding the ESLint configuration
+1. Clone the Repository:
+ 
+->git clone https://github.com/your-username/your-repo-name.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+->cd your-repo-name
+
+2. Install frontend dependencies:
+ 
+->cd client
+
+->npm install
+
+3. Install backend dependencies:
+   
+->cd server
+
+->npm install
+
+4. Add MongoDB URI:
+   
+Create a .env file in /server and add:
+
+MONGO_URI=your_mongodb_connection_string
+
+5. Start the app
+   
+Start backend:
+
+->cd server
+
+->npm start
+
+In another terminal, start frontend:
+
+->cd client
+
+->npm run dev
+
+🛠 Tech Stack:
+
+* React (with Vite)
+* Node.js
+* Express.js
+* MongoDB + Mongoose
+* React Toastify
+
+
