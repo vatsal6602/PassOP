@@ -39,11 +39,11 @@ const Manager = () => {
 
     const showPass = () => {
         passwordRef.current.type = "text"
-        if (ref.current.src.includes("Icons/eye.png")) {
-            ref.current.src = "Icons/hidden.png";
+        if (ref.current.src.includes("icons/eye.png")) {
+            ref.current.src = "icons/hidden.png";
             passwordRef.current.type = "password"
         } else {
-            ref.current.src = "Icons/eye.png";
+            ref.current.src = "icons/eye.png";
             passwordRef.current.type = "text"
         }
     }
@@ -145,7 +145,7 @@ const Manager = () => {
 
                             <input ref={passwordRef} value={form.password} onChange={handleChange} placeholder='Enter Password' className='rounded-full border border-blue-500 w-full p-4 py-1' type="password" name='password' id='password' />
                             <span className='absolute right-[3px] top-[4px] cursor-pointer' onClick={showPass}>
-                                <img ref={ref} className='p-1' width={26} src="Icons/hidden.png" alt="" />
+                                <img ref={ref} className='p-1' width={26} src="icons/hidden.png" alt="" />
                             </span>
                         </div>
 
