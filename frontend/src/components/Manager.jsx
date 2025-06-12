@@ -11,7 +11,7 @@ const Manager = () => {
     const [passwordArray, setPasswordArray] = useState([])
 
     const getPasswords = async () => {
-        let req = await fetch("http://localhost:8000/")
+        let req = await fetch(`${process.env.REACT_APP_BACKEND_URL}/`)
         let passwords = await req.json()
         console.log(passwords)
         setPasswordArray(passwords);
@@ -55,7 +55,7 @@ const Manager = () => {
             const newEntry = { ...form, id };
 
             if (isEdit) {
-                await fetch("http://localhost:8000/", {
+                await fetch(`${process.env.REACT_APP_BACKEND_URL}/`, {
                     method: "DELETE",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ id })
@@ -64,7 +64,7 @@ const Manager = () => {
 
             setPasswordArray([...passwordArray, newEntry]);
 
-            await fetch("http://localhost:8000/", {
+            await fetch(`${process.env.REACT_APP_BACKEND_URL}/`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(newEntry)
@@ -88,7 +88,7 @@ const Manager = () => {
         if (c) {
             setPasswordArray(passwordArray.filter(item => item.id !== id))
             // localStorage.setItem("passwords", JSON.stringify(passwordArray.filter(item => item.id !== id)))
-            let res = await fetch("http://localhost:8000/", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) })
+            let res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/`, { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) })
             toast('Password Deleted!', {
                 position: "top-right",
                 autoClose: 5000,
