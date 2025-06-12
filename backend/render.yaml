@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: passop-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    nodeVersion: 18
+    plan: free
+    rootDir: backend
