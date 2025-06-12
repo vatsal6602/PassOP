@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const dotenv = require('dotenv')
 dotenv.config()
 const bodyparser = require('body-parser')
-const url = 'mongodb://localhost:27017';
+const url = process.env.MONGO_URI;
 const client = new MongoClient(url);
 const cors = require("cors")
 
